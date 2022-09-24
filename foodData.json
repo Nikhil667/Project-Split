@@ -1,0 +1,64 @@
+{
+    "food" : [
+        {
+            "id" : 1,
+            "name" : "Small Burger",
+            "price" : 100,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 2,
+            "name" : "Big Burger",
+            "price" : 250,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 3,
+            "name" : "Juicy Burger",
+            "price" : 200,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 4,
+            "name" : "Dry Burger",
+            "price" : 300,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 5,
+            "name" : "Tiny Burger",
+            "price" : 10,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 6,
+            "name" : "Giant Burger",
+            "price" : 500,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 7,
+            "name" : "Veg Burger",
+            "price" : 50,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 8,
+            "name" : "Paneer Burger",
+            "price" : 200,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 9,
+            "name" : "Mutton Burger",
+            "price" : 600,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        },
+        {
+            "id" : 10,
+            "name" : "Special Burger",
+            "price" : 1000,
+            "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite."
+        }
+    ]
+}

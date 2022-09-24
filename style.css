@@ -1,0 +1,185 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url('./images/background.svg');
+    /*background-color: blueviolet;*/
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    color: #faebd7;
+    font-family: 'Inter', sans-serif;
+    /*font-family: 'general-sans', sans-serif;*/
+    margin: 6%;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.yellow{
+    color: #fff94a;
+    font-weight: 500;
+    letter-spacing: 0.09rem;
+}
+
+nav{
+    width: 100%;
+    /*background-color: burlywood;*/
+    height: auto;
+    padding-block: 6%;
+    margin-bottom: 4%;
+}
+
+.nav--links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav--logo{
+    font-size: 1.5rem;
+}
+
+.color{
+    color: darkorange;;
+    font-weight: 600;
+}
+
+
+
+.hero--section{
+    width: 100%;
+    height: auto;
+    /*background-color: antiquewhite;*/
+}
+
+.hero--heading{
+    text-align: center;
+    letter-spacing: 0.0125rem;
+    font-weight: 500;
+    padding: 1%;
+    border-radius: 8px;
+    background-color: darkorange;
+    color: #252525;
+    margin-bottom: 4%;
+}
+
+.hero--container{
+    width: 100%;
+    height: auto;
+    /*background-color: darkslategrey;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.hero--card{
+    width: 100%;
+    /*background-color: darkorange;*/
+    display: flex;
+    margin-block: 5%;
+}
+
+.rating{
+    display: flex;
+}
+
+.rating span:first-child{
+    margin-right: auto;
+}
+
+.card--img{
+    width: 40%;
+    position: relative;
+}
+
+.card--img img{
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 8px;
+}
+
+.card--img .food--indicator{
+    position: absolute;
+    width: 10%;
+    top: 5%;
+    left: 85%;
+    border-radius: 0;
+}
+
+
+.card--details{
+    /*container-type: inline-size; */
+    width: 60%;
+    /*background-color: lightblue;*/
+    padding-inline: 3%;
+    letter-spacing: 0.03rem;
+    font-weight: 200;
+}
+
+.rating, .card--name, .card--des, .card--price, .buttons{
+    margin-bottom: 3%;
+} 
+
+.rating > :where(span){
+    font-size: clamp(0.5rem, 2.8cqi, 2rem);
+}
+
+.card--details > :where(h2){
+    font-size: clamp(1.5rem, 4cqi , 5rem);
+}
+
+.card--details > :where(p){
+    font-size: clamp(0.5rem, 2.9cqi, 2.5rem);
+}
+
+.card--price{
+    font-size: 3.4cqi;
+}
+
+.card--details .buttons{
+    display: flex;
+}
+
+button{
+    border: 1px solid darkslategray;
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: clamp(0.9rem, 3cqi, 2.5rem);
+    font-weight: 600;
+    color: #252525;
+    font-family: 'Inter', sans-serif;
+}
+
+.button--minus{
+    width: 18%;
+    background-color: rgb(178, 178, 178);
+}
+
+.button--add{
+    width: 80%;
+    /*background-color: rgb(77, 221, 77);*/
+    background-color: darkorange;
+    
+}
+
+.divider{
+    border: 1px solid darkslategrey;
+}
+
+
+
+
+
+
+
+
+
