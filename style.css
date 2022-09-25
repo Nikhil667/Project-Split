@@ -59,7 +59,6 @@ nav{
     width: 100%;
     height: auto;
     /*background-color: antiquewhite;*/
-    margin-bottom: 15%;
 }
 
 .marquee{
@@ -91,6 +90,7 @@ nav{
     /*background-color: darkslategrey;*/
     display: flex;
     flex-direction: column;
+    margin-bottom: 30%;
 }
 
 .hero--card{
@@ -273,6 +273,18 @@ button{
     margin-bottom: 10%;
     border-radius: 16px;
 }
+
+.dropdown{
+    width: 100%;
+    padding: 1%;
+    padding-block: 2%;
+    margin-bottom: 5%;
+    border: none;
+    background-color: rgb(229, 241, 252);
+    color: #252525;
+    border: 10px;
+}
+
 /*
 .card{
     margin: 7%;
@@ -285,6 +297,10 @@ button{
     font-size: clamp(0.5rem, 3cqi + 0.5rem, 2.5rem);
 } */
 
+.proceedDropDown{
+    display: block;
+}
+
 .card {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -292,6 +308,8 @@ button{
     grid-column-gap: 8px;
     font-size: clamp(0.5rem, 2cqi + 0.5rem, 2.5rem);
     align-items: center;
+    margin-bottom: 7%;
+    
 }    
     
 .payment--heading { grid-area: 1 / 1 / 2 / 4; }

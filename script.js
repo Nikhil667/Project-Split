@@ -99,6 +99,12 @@ const firstTotal = document.querySelector(".payment--total");
 const secondTotal = document.querySelector(".allTotal--price");
 const paymentVisible = document.querySelector(".payment--visible");
 
+
+
+const paymentMenu = document.querySelector(".proceedDropDown");
+
+
+
 // function subPayment(paymentData, e){
 
 //     totalPrice.shift(paymentData[e].price);
@@ -159,19 +165,63 @@ function addPayment(paymentData, e){
 
     // console.log(total());
     //console.log(paymentData[e].price);  
+
+    // const paymentMenu = document.querySelector(".proceedDropDown");
+
+    let order = "";
+
+    paymentData.forEach((ele) => {
+        order += `<div class="card">    
+        <div class="payment--heading">Excellent Burger</div>
+        <div class="payment--price">1000</div>
+        <div class="payment--multi">X</div>
+        <div class="payment--quantity">5</div>
+        <div class="payment--equal">=</div>
+        <div class="payment--totalPrice">5000</div>
+        <div class="payment--img"><img src="./images/remove.svg" alt="remove"></div>
+    </div>`
+    paymentMenu.innerHTML = order
+
+    })
+
+    const dropDown = document.querySelector(".dropdown");
+    dropDown.addEventListener("click", togglePayment);
+
+    function togglePayment(){
+        if(paymentMenu.style.display == "none"){
+            paymentMenu.style.display = "block";
+        }else{
+            paymentMenu.style.display = "none";
+        }
+    }
 }
 
-const paymentMenu = document.querySelector(".payment--container");
 
 
+
+
+
+
+
+
+
+
+
+
+
+const orderMenu = document.querySelector(".payment--container");
 
 const viewButton =  document.querySelector(".open--window ");
 viewButton.addEventListener("click", toggleWindow);
 
 
 function toggleWindow(){
-    if(paymentMenu.style.display == "none"){
-        paymentMenu.style.display = "block";
+    if(orderMenu.style.display == "none"){
+        orderMenu.style.display = "block";
     }
-    paymentMenu.style.display = "block";
+    orderMenu.style.display = "block";
 }
+
+
+
+
