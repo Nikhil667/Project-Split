@@ -5,9 +5,9 @@
             "name" : "Purple Burger",
             "price" : 50,
             "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite.",
-            "rating" : 4,
-            "isBestSeller" : true,
-            "veg" : false,
+            "rating" : 3,
+            "isBestSeller" : false,
+            "veg" : true,
             "imgUrl" : "./images/burger.svg"
         },
         {

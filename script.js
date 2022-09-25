@@ -37,7 +37,7 @@ function getData(data){
                 <p class="card--des">${ele.des}</p>
                 <p class="card--price">Rs.<span>${ele.price}</span></p>
                 <div class="buttons">
-                    <button class="button--minus" value=${ele.id}>-</button>
+                    
                     <button class="button--add" value=${ele.id}>Add +</button>
                 </div>
             </div>
@@ -47,41 +47,94 @@ function getData(data){
         card.innerHTML = result;
     })
 
+    //<button class="button--minus" value=${ele.id}>-</button>
 
-    const button = document.querySelectorAll(".button--add");
-    const des = document.querySelector(".card--des");
+    let paymentData = data.food.map((ele) => {
+        return {
+            name : ele.name,
+            price : ele.price 
+        }
+    })
+
+
+    const addButton = document.querySelectorAll(".button--add");
+    // const minusButton = document.querySelectorAll(".button--minus");
+    //const des = document.querySelector(".card--des");
     
-    buttonPressed = e => {
-        let paymentData = data.food.map((ele) => {
-            return {
-                name : ele.name,
-                price : ele.price 
-            }
-        })
-        // console.log(e.target.value);
-        paymentWindow(paymentData, e.target.value);
+    addButtonPressed = e => {
+        // let paymentData = data.food.map((ele) => {
+        //     return {
+        //         name : ele.name,
+        //         price : ele.price 
+        //     }
+        // })
+       // console.log(e.target.value);
+        addPayment(paymentData, e.target.value);
     }
-    for(let buttons of button){
-        buttons.addEventListener("click", buttonPressed)
+
+    // subButtonPressed = e1 => {
+    //     // let paymentData = data.food.map((ele) => {
+    //     //     return {
+    //     //         name : ele.name,
+    //     //         price : ele.price 
+    //     //     }
+    //     // })
+    //     //console.log(e.target.value);
+    //     subPayment(paymentData, e1.target.value);
+    // }
+
+
+    for(let addButtons of addButton){
+        addButtons.addEventListener("click", addButtonPressed)
     }
+    // for(let minusButtons of minusButton){
+    //     minusButtons.addEventListener("click", subButtonPressed)
+    // }
    
 }
 let totalPrice = [];
-function paymentWindow(paymentData, e){
+//let sub;
 
-    const total = document.querySelector(".payment--total");
+const firstTotal = document.querySelector(".payment--total");
+const secondTotal = document.querySelector(".allTotal--price");
+const paymentVisible = document.querySelector(".payment--visible");
+
+// function subPayment(paymentData, e){
+
+//     totalPrice.shift(paymentData[e].price);
+
+//     if(paymentData.length >= 0){
+//         sub = totalPrice.length == 0 ? 0 : totalPrice.reduce(function(prevValue, currentValue){
+//             return (prevValue + currentValue);
+//         })
+        
+//     }
+    
+
+//     console.log(sub);
+//     console.log(totalPrice);
+//     total.textContent = sub;
+
+// }
+
+function addPayment(paymentData, e){
 
     //totalPrice.push(paymentData[e].price);
     totalPrice.push(paymentData[e].price);
+
     let sum = totalPrice.reduce(function(prevValue, currentValue){
         return (prevValue + currentValue);
     })
     //console.log(paymentData[e].price);
     //console.log(totalPrice);
+
     console.log(sum);
-
-    total.textContent = sum;
-
+    console.log(totalPrice);
+    firstTotal.textContent = sum;
+    secondTotal.textContent = sum; 
+    paymentVisible.style.display = "block";
+    
+    
     // let sumtotal;
 
     // let sum = {
@@ -96,8 +149,6 @@ function paymentWindow(paymentData, e){
 
     // console.log(total());
 
-    
-
     // const total =(function(paymentData, e){
     //     let sum = 0;
     //     return function(){
@@ -110,3 +161,17 @@ function paymentWindow(paymentData, e){
     //console.log(paymentData[e].price);  
 }
 
+const paymentMenu = document.querySelector(".payment--container");
+
+
+
+const viewButton =  document.querySelector(".open--window ");
+viewButton.addEventListener("click", toggleWindow);
+
+
+function toggleWindow(){
+    if(paymentMenu.style.display == "none"){
+        paymentMenu.style.display = "block";
+    }
+    paymentMenu.style.display = "block";
+}

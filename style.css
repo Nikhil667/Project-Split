@@ -59,16 +59,29 @@ nav{
     width: 100%;
     height: auto;
     /*background-color: antiquewhite;*/
+    margin-bottom: 15%;
+}
+
+.marquee{
+    position: relative;
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+
+.track {
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 16s linear infinite;
 }
 
 .hero--heading{
+    font-size: clamp(0.5rem, 1cqi + 0.4rem, 2rem);
     text-align: center;
-    letter-spacing: 0.0125rem;
-    font-weight: 500;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
     padding: 1%;
-    border-radius: 8px;
-    background-color: darkorange;
-    color: #252525;
+    /*background-color: darkorange;*/
+    color: antiquewhite;
     margin-bottom: 4%;
 }
 
@@ -89,6 +102,8 @@ nav{
 
 .rating{
     display: flex;
+    gap: 4px;
+    align-items: center;
 }
 
 .rating span:first-child{
@@ -137,11 +152,12 @@ nav{
 }
 
 .card--details > :where(p){
-    font-size: clamp(0.5rem, 2.9cqi, 2.5rem);
+    font-size: clamp(0.4rem, 2.6cqi, 2.5rem);
 }
 
 .card--price{
     font-size: 3.4cqi;
+    font-weight: 600;
 }
 
 .card--details .buttons{
@@ -161,22 +177,22 @@ button{
     outline: none;
 }
 
-.button--minus{
+/* .button--minus{
     width: 18%;
     background-color: #b2b2b2;
-}
+} */
 
-.button--minus:hover{
+/* .button--minus:hover{
     background-color: #b2b2b2;
 }
 
 .button--minus:active{
     background-color: #585858;
     transform: translateY(1px);
-}
+} */
 
 .button--add{
-    width: 80%;
+    width: 100%;
     /*background-color: rgb(77, 221, 77);*/
     background-color: darkorange;
 }
@@ -203,6 +219,10 @@ button{
     color: #252525; 
 }
 
+.payment--visible{
+    display: none;
+}
+
 .payment--footer{
     width: 100%;
     height: 10%;
@@ -214,11 +234,134 @@ button{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 9;
+}
+
+.payment--text{
+    font-size: clamp(0.5rem, 3.8cqi, 2.5rem);
+}
+
+.payment--footer button{
+    font-family: 'Inter', sans-serif;
+    padding: 3%;
+    font-size: clamp(0.5rem, 3.5cqi, 2.5rem);
+    color: aliceblue;
+    background-color: rgb(0, 149, 0);
+}
+
+.payment--footer button:hover{
+    background-color: rgb(1, 134, 1);
+} 
+
+.payment--footer button:active{
+    background-color: rgb(1, 107, 1);
+    transform: translateY(1px);
+}
+
+.payment--container{
+    display: none;
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: aliceblue;
+    z-index: 50;
+    padding: 5%;
+    overflow: scroll;
+    margin-bottom: 10%;
+    border-radius: 16px;
+}
+/*
+.card{
+    margin: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card > :where(p){
+    font-size: clamp(0.5rem, 3cqi + 0.5rem, 2.5rem);
+} */
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 8px;
+    font-size: clamp(0.5rem, 2cqi + 0.5rem, 2.5rem);
+    align-items: center;
+}    
+    
+.payment--heading { grid-area: 1 / 1 / 2 / 4; }
+.payment--price { grid-area: 1 / 4 / 2 / 5; }
+.payment--multi { grid-area: 1 / 5 / 2 / 6; }
+.payment--quantity { grid-area: 1 / 6 / 2 / 7; }
+.payment--equal { grid-area: 1 / 7 / 2 / 8; }
+.payment--totalPrice { grid-area: 1 / 8 / 2 / 9; }
+.payment--img { grid-area: 1 / 9 / 2 / 10; }
+
+.payment--img {
+    width: 100%;
+}
+
+.payment--img img{
+    width: 90%;
+}
+.payment--img img:active{
+    transform: translateY(2px);
 }
 
 
+.secondDivider{
+    color: #252525;
+    background-color: #252525;
+    opacity: 0.5;
+}
 
+.proceedPayment{
+    width: 100%;
+    height: 10%;
+    background-color: aliceblue;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
 
+.allTotal{
+    
+    display: flex;
+    margin-block: 5%;
+    gap: 8%;
+}
 
+.allTotal--text, .allTotal--price {
+    font-size: clamp(0.5rem, 3.8cqi, 2.5rem);
+}
+.proceedPayment button{
+    font-family: 'Inter', sans-serif;
+    padding: 3%;
+    font-size: clamp(0.5rem, 3.5cqi, 2.5rem);
+    color: aliceblue;
+    background-color: rgb(0, 149, 0);
+}
 
+.proceedPayment button:hover{
+    background-color: rgb(1, 134, 1);
+} 
 
+.proceedPayment button:active{
+    background-color: rgb(1, 107, 1);
+    transform: translateY(1px);
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
