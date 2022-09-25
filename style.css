@@ -10,7 +10,7 @@ body{
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
-    color: #faebd7;
+    color: antiquewhite;
     font-family: 'Inter', sans-serif;
     /*font-family: 'general-sans', sans-serif;*/
     margin: 6%;
@@ -47,14 +47,13 @@ nav{
 
 .nav--logo{
     font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .color{
     color: darkorange;;
     font-weight: 600;
 }
-
-
 
 .hero--section{
     width: 100%;
@@ -157,11 +156,23 @@ button{
     font-weight: 600;
     color: #252525;
     font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
 }
 
 .button--minus{
     width: 18%;
-    background-color: rgb(178, 178, 178);
+    background-color: #b2b2b2;
+}
+
+.button--minus:hover{
+    background-color: #b2b2b2;
+}
+
+.button--minus:active{
+    background-color: #585858;
+    transform: translateY(1px);
 }
 
 .button--add{
@@ -171,18 +182,39 @@ button{
 }
 
 .button--add:hover{
-    background-color: rgb(149, 19, 114);
-}
+    background-color:#f6c282 ;
+} 
 
 .button--add:active{
-    background-color: rgb(0, 194, 16);
+    background-color: #c06900;
+    transform: translateY(1px);
 }
 
 .divider{
-    border: 1px solid darkslategrey;
+    color: darkslategray;
+    background-color: darkslategray;
+    opacity: 0.1;
 }
 
+.payment--section{
+    width: 100%;
+    height: auto;
+    background-color: #fff94a;  
+    color: #252525; 
+}
 
+.payment--footer{
+    width: 100%;
+    height: 10%;
+    background-color: aliceblue;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 
 
