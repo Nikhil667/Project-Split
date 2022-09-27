@@ -52,7 +52,9 @@ function getData(data){
     let paymentData = data.food.map((ele) => {
         return {
             name : ele.name,
-            price : ele.price 
+            price : ele.price, 
+            quantity : 0,
+            id : ele.id
         }
     })
 
@@ -92,7 +94,10 @@ function getData(data){
     // }
    
 }
-let totalPrice = [];
+
+let total = [];
+
+let filteredOrderList = [];
 //let sub;
 
 const firstTotal = document.querySelector(".payment--total");
@@ -103,7 +108,7 @@ const paymentVisible = document.querySelector(".payment--visible");
 
 const paymentMenu = document.querySelector(".proceedDropDown");
 
-
+const orderMenu = document.querySelector(".payment--container");
 
 // function subPayment(paymentData, e){
 
@@ -122,20 +127,45 @@ const paymentMenu = document.querySelector(".proceedDropDown");
 //     total.textContent = sub;
 
 // }
+let count = 0;
+let sum;
+
+let frequencyArrayForOrder = [];
+
 
 function addPayment(paymentData, e){
-
+    
     //totalPrice.push(paymentData[e].price);
-    totalPrice.push(paymentData[e].price);
+    paymentData[e].quantity++;
+    total.push(paymentData[e])
+     
+    
+    // if(total[e].name != paymentData[e].name){
+    //     total.push(paymentData[e]);
+    // }else{
+    //     count++
+    // }
 
-    let sum = totalPrice.reduce(function(prevValue, currentValue){
+
+    
+    //console.log(total);
+    //console.log(e);
+    //console.log(count);
+
+    //console.log(totalPrice[count++].price);
+    
+    //frequencyArrayForOrder[e];
+
+    //console.log(frequencyArrayForOrder);
+
+    sum = total.map((ele) => ele.price).reduce(function(prevValue, currentValue){
         return (prevValue + currentValue);
     })
     //console.log(paymentData[e].price);
     //console.log(totalPrice);
 
-    console.log(sum);
-    console.log(totalPrice);
+    //console.log(sum);
+    
     firstTotal.textContent = sum;
     secondTotal.textContent = sum; 
     paymentVisible.style.display = "block";
@@ -168,23 +198,158 @@ function addPayment(paymentData, e){
 
     // const paymentMenu = document.querySelector(".proceedDropDown");
 
+    //let order = "";
+
+    // paymentData.forEach((ele) => {
+    //     order += `<div class="card">    
+    //     <div class="payment--heading">Excellent Burger</div>
+    //     <div class="payment--price">1000</div>
+    //     <div class="payment--multi">X</div>
+    //     <div class="payment--quantity">5</div>
+    //     <div class="payment--equal">=</div>
+    //     <div class="payment--totalPrice">5000</div>
+    //     <div class="payment--img"><img src="./images/remove.svg" alt="remove"></div>
+    // </div>`
+    // paymentMenu.innerHTML = order
+
+    // })
+
+    // total.forEach((ele) => {
+    //     order += `<div class="card">    
+    //     <div class="payment--heading">${ele.name}</div>
+    //     <div class="payment--price">${ele.price}</div>
+    //     <div class="payment--multi">X</div>
+    //     <div class="payment--quantity">5</div>
+    //     <div class="payment--equal">=</div>
+    //     <div class="payment--totalPrice">5000</div>
+    //     <div class="payment--img"><img src="./images/remove.svg" alt="remove"></div>
+    // </div>`
+    // paymentMenu.innerHTML = order
+
+    // })
+
+    ////////////////////
+    // removing duplicate order from the array
+   
+    filteredOrderList = total.filter((item, index) => total.indexOf(item) == index);
+
+    orderList(filteredOrderList);
+    
+
+    // const removeButton = document.querySelectorAll(".payment--remove");
+
+
+    // removeButtonPressed = e =>{
+    //     //console.log(valueNeedToBeSubtracted)
+        
+    //     console.log("Button Clicked")
+    //     console.log(e.target.value)
+    // }
+
+    // for(let button of removeButton){
+    //     button.addEventListener("click", removeButtonPressed);
+    // }
+
+    
+    
+}
+
+function removingItem(filteredOrderList, e){
+    //console.log(total)
+    console.log(filteredOrderList)
+    console.log(e)
+    //console.log(filteredOrderList[e]);
+    const index = filteredOrderList.findIndex(ele => ele.id == e);
+    //indexOfElementToBeRemovedFromList
+    
+    console.log(index)
+    
+    sum -= (filteredOrderList[index].price * filteredOrderList[index].quantity);   
+    if(sum < 0){
+        sum = 0;
+    } 
+    console.log(sum)
+
+    firstTotal.textContent = sum; 
+    secondTotal.textContent = sum; 
+
+    //paymentMenu.style.display = "none";
+
+    filteredOrderList.splice(index, 1)
+
+    console.log(filteredOrderList)
+    
+
+    
+    
+
+}
+
+const allCardList  = document.querySelectorAll(".card");
+
+
+
+
+
+
+let valueNeedToBeSubtracted = 0;
+
+function orderList(filteredOrderList){
+
+
+
+
     let order = "";
 
-    paymentData.forEach((ele) => {
+    filteredOrderList.forEach((ele) => {
+        
         order += `<div class="card">    
-        <div class="payment--heading">Excellent Burger</div>
-        <div class="payment--price">1000</div>
+        <div class="payment--heading">${ele.name}</div>
+        <div class="payment--price">${ele.price}</div>
         <div class="payment--multi">X</div>
-        <div class="payment--quantity">5</div>
+        <div class="payment--quantity">${ele.quantity}</div>
         <div class="payment--equal">=</div>
-        <div class="payment--totalPrice">5000</div>
-        <div class="payment--img"><img src="./images/remove.svg" alt="remove"></div>
-    </div>`
-    paymentMenu.innerHTML = order
-
+        <div class="payment--totalPrice">${ele.price * ele.quantity}</div>
+        <button class="payment--remove" value=${ele.id}>X</button>
+        </div>
+        `
+        paymentMenu.innerHTML = order;
+            
     })
 
-    const dropDown = document.querySelector(".dropdown");
+    const removeButton = document.querySelectorAll(".payment--remove");
+
+    //added after
+    const crossButton = document.querySelector(".card")
+
+    removeButtonPressed = e =>{
+        //console.log(valueNeedToBeSubtracted)
+        
+        //console.log("Button Clicked");
+        // console.log(filteredOrderList.value)
+        //console.log(e.target.value);
+
+        removingItem(filteredOrderList, e.target.value);
+        
+    }
+
+    for(let buttons of removeButton){
+        buttons.addEventListener("click", removeButtonPressed);
+    }
+
+
+    
+
+
+
+}
+
+
+
+
+
+
+const dropDown = document.querySelector(".dropdown");
     dropDown.addEventListener("click", togglePayment);
 
     function togglePayment(){
@@ -194,33 +359,24 @@ function addPayment(paymentData, e){
             paymentMenu.style.display = "none";
         }
     }
-}
 
+    const viewButton =  document.querySelector(".open--window ");
+    viewButton.addEventListener("click", toggleWindow);
 
-
-
-
-
-
-
-
-
-
-
-
-
-const orderMenu = document.querySelector(".payment--container");
-
-const viewButton =  document.querySelector(".open--window ");
-viewButton.addEventListener("click", toggleWindow);
-
-
-function toggleWindow(){
-    if(orderMenu.style.display == "none"){
+    function toggleWindow(){
+        if(orderMenu.style.display == "none"){
+            orderMenu.style.display = "block";
+        }
         orderMenu.style.display = "block";
     }
-    orderMenu.style.display = "block";
-}
+
+
+
+
+
+
+
+
 
 
 

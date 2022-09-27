@@ -5,11 +5,12 @@
 }
 
 body{
-    background: url('./images/background.svg');
-    /*background-color: blueviolet;*/
+    /* background: url('./images/background.svg');
+    /*background-color: blueviolet;
     background-position: center;
     background-repeat: repeat;
-    background-size: cover;
+    background-size: cover; */
+    background-color: #252525;
     color: antiquewhite;
     font-family: 'Inter', sans-serif;
     /*font-family: 'general-sans', sans-serif;*/
@@ -90,7 +91,7 @@ nav{
     /*background-color: darkslategrey;*/
     display: flex;
     flex-direction: column;
-    margin-bottom: 30%;
+    margin-bottom: 40%;
 }
 
 .hero--card{
@@ -270,7 +271,7 @@ button{
     z-index: 50;
     padding: 5%;
     overflow: scroll;
-    margin-bottom: 10%;
+    margin-bottom: 15%;
     border-radius: 16px;
 }
 
@@ -278,11 +279,11 @@ button{
     width: 100%;
     padding: 1%;
     padding-block: 2%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     border: none;
-    background-color: rgb(229, 241, 252);
+    background-color: rgb(155, 207, 255);
     color: #252525;
-    border: 10px;
+    border-radius: 10px;
 }
 
 /*
@@ -309,8 +310,11 @@ button{
     font-size: clamp(0.5rem, 2cqi + 0.5rem, 2.5rem);
     align-items: center;
     margin-bottom: 7%;
-    
 }    
+
+.none{
+    display: none;
+}
     
 .payment--heading { grid-area: 1 / 1 / 2 / 4; }
 .payment--price { grid-area: 1 / 4 / 2 / 5; }
@@ -318,16 +322,16 @@ button{
 .payment--quantity { grid-area: 1 / 6 / 2 / 7; }
 .payment--equal { grid-area: 1 / 7 / 2 / 8; }
 .payment--totalPrice { grid-area: 1 / 8 / 2 / 9; }
-.payment--img { grid-area: 1 / 9 / 2 / 10; }
+.payment--remove { grid-area: 1 / 9 / 2 / 10; }
 
-.payment--img {
+.payment--remove {
     width: 100%;
 }
 
-.payment--img img{
+.payment--remove img{
     width: 90%;
 }
-.payment--img img:active{
+.payment--remove img:active{
     transform: translateY(2px);
 }
 
