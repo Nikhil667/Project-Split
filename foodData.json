@@ -6,8 +6,8 @@
             "price" : 50,
             "des" : "The patty needs to be juicy, the bun soft but sturdy, and you want the meat/bun/accompaniment ratio to be even from first to last bite.",
             "rating" : 3,
-            "isBestSeller" : false,
-            "veg" : true,
+            "isBestSeller" : true,
+            "veg" : false,
             "imgUrl" : "./images/burger.svg"
         },
         {
