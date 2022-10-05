@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./loader.css">
+</head>
+<body>
+    <header>
+        <h1 id="text">Delhi.Burger</h1>
+    </header>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" integrity="sha512-gsEItzcNkWxfxHjr4BaEZAd9YuRWYjxnj7c/yukcZ0/nWehUb5TjJNyyv1ApCU2DFH/qgw+stFZHPOKnoQnIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://unpkg.com/split-type"></script>
+
+    <script>
+        const myText = new SplitType('#text');
+
+        gsap.to('.char',{
+            y: 0,
+            stagger: 0.05, // if this false or no value given to this stagger object then all text will show up simultaneously rather than one by one
+            delay: 0.2,
+            duration: 0.1
+        })
+
+        setTimeout(()=>{
+            this.location.replace("./main/index.html")
+        },2500)
+
+    </script>
+
+</body>
+</html>
