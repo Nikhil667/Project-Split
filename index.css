@@ -16,7 +16,7 @@ h1{
     text-transform: uppercase;
     font-family: 'Bebas Neue', cursive;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    line-height: 3.4rem;
+    line-height: 3.6rem;
 }
 
 .char{
