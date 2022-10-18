@@ -42,23 +42,62 @@ a{
 }
 
 nav{
-    width: 100%;
-    /*background-color: burlywood;*/
-    height: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 10;
+    text-transform: uppercase;
+    transform: translateX(100%);
     padding-block: 6%;
     margin-bottom: 4%;
+    transition: transform .5s ease-in-out;
+}    
+
+nav ul{
+    list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
 }
 
-.nav--links{
+nav ul a{
+    color: #000000;
+    padding: 0.75em 2em;
+    display: block;
+}
+
+nav ul a:hover{
+    background: rgb(192, 183, 183);;
+}
+
+nav .nav--close{
+    float: right;
+    margin: 2em;
+    width: 2.5em;
+}
+
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+header img{
+    margin: 1.7em;
+    cursor: pointer;
+}
+
+.open--nav{
+    transform: translateX(0%);
+}
+
 .nav--logo{
     font-size: 1.5rem;
     font-weight: 300;
-}
+    color: white;
+} 
 
 
 

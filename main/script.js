@@ -12,6 +12,18 @@
 // // //Animation added on 01/10/2022 6.36pm
 // function mainFunction(){
 
+const menu = document.querySelector('.nav--menu')
+const close = document.querySelector('.nav--close')
+const nav = document.querySelector('nav')
+
+menu.addEventListener('click', () => {
+    nav.classList.add('open--nav')
+})
+
+close.addEventListener('click', () => {
+    nav.classList.remove('open--nav')
+})
+
 async function fetchData (){
 
     const res = await fetch("../foodData.json");

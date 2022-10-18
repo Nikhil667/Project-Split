@@ -1,3 +1,16 @@
+const menu = document.querySelector('.nav--menu')
+const close = document.querySelector('.nav--close')
+const nav = document.querySelector('nav')
+
+menu.addEventListener('click', () => {
+    nav.classList.add('open--nav')
+})
+
+close.addEventListener('click', () => {
+    nav.classList.remove('open--nav')
+})
+
+
 const usernameEl = document.querySelector('#username'); 
 const mailEl = document.querySelector('#email'); 
 const passwordEl = document.querySelector('#password'); 
