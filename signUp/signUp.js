@@ -34,6 +34,7 @@ form.addEventListener('submit', function(e){
     // submit to the server if the form is valid
     if(validation){
         console.log("Form Submitted")
+        window.alert("Signed Up Successfully")
     }
 })
 

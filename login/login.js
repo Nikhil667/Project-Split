@@ -29,6 +29,7 @@ form.addEventListener('submit', function(e){
     // submit to the server if the form is valid
     if(validation){
         console.log("Logged In Successfully")
+        window.alert("Payment Successful \nYour order is on the way");
     }
 })
 
